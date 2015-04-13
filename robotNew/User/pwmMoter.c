@@ -23,19 +23,19 @@ void CarGPIO_Init(void)
 {
 		GPIO_InitTypeDef GPIO_InitStructure;
 		/*开启GPIOC的外部时钟*/
-		RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB, ENABLE); 
+		RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOC, ENABLE); 
 		/*选择要控制的GPIOB引脚*/															   
-		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;	
+		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3;	
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;   
 		/*选择引脚速度50MHz */   
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
 		/*初始化GPIOB*/
-		GPIO_Init(GPIOB, &GPIO_InitStructure);	
+		GPIO_Init(GPIOC, &GPIO_InitStructure);	
 
-		GPIO_SetBits(GPIOB,GPIO_Pin_12);
-  		GPIO_SetBits(GPIOB,GPIO_Pin_13);
-  		GPIO_SetBits(GPIOB,GPIO_Pin_14);
-  		GPIO_SetBits(GPIOB,GPIO_Pin_15);	
+		GPIO_SetBits(GPIOC,GPIO_Pin_0);
+  		GPIO_SetBits(GPIOC,GPIO_Pin_1);
+  		GPIO_SetBits(GPIOC,GPIO_Pin_2);
+  		GPIO_SetBits(GPIOC,GPIO_Pin_3);	
 }
 void Tim3_Configuration(void)
 {
@@ -111,18 +111,18 @@ void motor1(uint8_t dir, uint8_t state,int speed_add)
 	if(state  == 0)//停止
 	{
 		TIM_SetCompare1(TIM3,0);
-		GPIO_ResetBits(GPIOB,GPIO_Pin_12);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_0);
 		return;
   	}
 	if(dir)//为1则正转
 	{
 		TIM_SetCompare1(TIM3,400-(MORTOR_SPEED+speed_add));
-		GPIO_SetBits(GPIOB,GPIO_Pin_12);
+		GPIO_SetBits(GPIOC,GPIO_Pin_0);
   	}
 	else
 	{
 		TIM_SetCompare1(TIM3,600+(MORTOR_SPEED+speed_add));
-		GPIO_ResetBits(GPIOB,GPIO_Pin_12);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_0);
   	}
 }
 //moter2为后面的电机
@@ -131,18 +131,18 @@ void motor2(uint8_t dir, uint8_t state,int speed_add)
 	if(state  == 0)//停止
 	{
 		TIM_SetCompare2(TIM3,0);
-		GPIO_ResetBits(GPIOB,GPIO_Pin_13);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_1);
 		return;
   	}
 	if(dir)//为1则正转
 	{
 		TIM_SetCompare2(TIM3,400-(MORTOR_SPEED+speed_add));
-		GPIO_SetBits(GPIOB,GPIO_Pin_13);
+		GPIO_SetBits(GPIOC,GPIO_Pin_1);
   	}
 	else
 	{
 		TIM_SetCompare2(TIM3,600+(MORTOR_SPEED+speed_add));
-		GPIO_ResetBits(GPIOB,GPIO_Pin_13);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_1);
   	}
 }
 //moter3为左面的电机
@@ -151,18 +151,18 @@ void motor3(uint8_t dir, uint8_t state,int speed_add)
 	if(state  == 0)//停止
 	{
 		TIM_SetCompare3(TIM3,0);
-		GPIO_ResetBits(GPIOB,GPIO_Pin_14);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_2);
 		return;
   	}
 	if(dir)//为1则正转
 	{
 		TIM_SetCompare3(TIM3,400-(MORTOR_SPEED+speed_add));
-		GPIO_SetBits(GPIOB,GPIO_Pin_14);
+		GPIO_SetBits(GPIOC,GPIO_Pin_2);
   	}
 	else
 	{
 		TIM_SetCompare3(TIM3,600+(MORTOR_SPEED+speed_add));
-		GPIO_ResetBits(GPIOB,GPIO_Pin_14);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_2);
   	}
 }
 //moter4为右面的电机
@@ -171,18 +171,18 @@ void motor4(uint8_t dir, uint8_t state,int speed_add)
 	if(state  == 0)//停止
 	{
 		TIM_SetCompare4(TIM3,0);
-		GPIO_ResetBits(GPIOB,GPIO_Pin_15);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_3);
 		return;
   	}
 	if(dir)//为1则正转
 	{
 		TIM_SetCompare4(TIM3,400-(MORTOR_SPEED+speed_add));
-		GPIO_SetBits(GPIOB,GPIO_Pin_15);
+		GPIO_SetBits(GPIOC,GPIO_Pin_3);
   	}
 	else
 	{
 		TIM_SetCompare4(TIM3,600+(MORTOR_SPEED+speed_add));
-		GPIO_ResetBits(GPIOB,GPIO_Pin_15);
+		GPIO_ResetBits(GPIOC,GPIO_Pin_3);
   	}
 }
 //speed在0-999间

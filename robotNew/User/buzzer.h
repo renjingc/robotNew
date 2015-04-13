@@ -3,8 +3,8 @@
 
 #include "stm32f10x.h"
 
-#define BUZZER__PORT   GPIOB
-#define BUZZER		   GPIO_Pin_5
+#define BUZZER__PORT   GPIOE
+#define BUZZER		   GPIO_Pin_4
 
 
 void buzzerInit(void);

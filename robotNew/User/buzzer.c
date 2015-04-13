@@ -6,7 +6,7 @@ void buzzerInit(void)
 		GPIO_InitTypeDef GPIO_InitStructure;
 
 		/*开启GPIOC的外部时钟*/
-		RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB, ENABLE); 
+		RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOE, ENABLE); 
 
 		/*选择要控制的GPIOB引脚*/															   
 		GPIO_InitStructure.GPIO_Pin = BUZZER;	

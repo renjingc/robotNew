@@ -3,10 +3,10 @@
 
 #include "stm32f10x.h"
 
-/*1为前面的电机		   TIM3 CCR1->PA6 GPIO->PB12
- *2为后面的电机		   TIM3 CCR2->PA7 GPIO->PB13
- *3为左面的电机		   TIM3 CCR3->PB0 GPIO->PB14
- *4为右面的电机		   TIM3 CCR3->PB1 GPIO->PB15
+/*1为前面的电机		   TIM3 CCR1->PA6 GPIO->PC0
+ *2为后面的电机		   TIM3 CCR2->PA7 GPIO->PC1
+ *3为左面的电机		   TIM3 CCR3->PB0 GPIO->PC2
+ *4为右面的电机		   TIM3 CCR3->PB1 GPIO->PC3
  *往左为正转
  *往前为正转
  */
