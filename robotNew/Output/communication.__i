@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\Libraries\FWlib\inc -I..\..\User -I "D:\MDK\ARM\INC" -I "D:\MDK\ARM\INC\ST\STM32F10x" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\..\Output\communication.o" --omf_browse "..\..\Output\communication.crf" --depend "..\..\Output\communication.d" "..\..\User\communication.c"
