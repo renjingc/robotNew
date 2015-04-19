@@ -81,8 +81,7 @@ void USART1_IRQHandler(void)
 			receive_complete_flag = 1;
 			//receive_count = 0;
       	}     
-	} 
-	 
+	} 	 
 }
 /*********************************************END OF FILE**********************/
 

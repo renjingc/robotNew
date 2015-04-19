@@ -47,10 +47,10 @@ void Tim3_Configuration(void)
 
 	
 	/* PWM信号电平跳变值 */
- 	u16 CCR1_Val = 700;      //前面的电机
- 	u16 CCR2_Val = 700;	  	 //后面的电机
- 	u16 CCR3_Val = 700;		 //左面的电机
- 	u16 CCR4_Val = 700;		 //右面的电机
+ 	u16 CCR1_Val = 999;      //前面的电机
+ 	u16 CCR2_Val = 999;	  	 //后面的电机
+ 	u16 CCR3_Val = 999;		 //左面的电机
+ 	u16 CCR4_Val = 999;		 //右面的电机
 
 	/* 设置TIM3CLK 为 72MHZ */
   	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE); 	
@@ -309,12 +309,4 @@ void motor_rightBack(int speed)
 	motor4(FAN_ZHUAN,MORTOR_START,speed-800);
 	moterState=8;
 }
-int process1_1=0;
-int count=0;
-void moter_1_1(void)
-{
-	motor1(ZHENG_ZHUAN,MORTOR_START,-550);
-	motor4(ZHENG_ZHUAN,MORTOR_START,-550);
-	motor2(FAN_ZHUAN,MORTOR_START,-550);
-	motor3(FAN_ZHUAN,MORTOR_START,-550);
-}
+

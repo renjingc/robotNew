@@ -350,9 +350,9 @@ void TIM8_Init(void)
 void stepperMoterInit()
 {
 	TIM5_Init();//左边的电机前四个
-	TIM8_Init();
+	TIM8_Init();//用于手爪的吸力电机
 	TIM4_Init();//右边的电机前四个	  
-	TIM1_Init(); //用于手爪的吸力电机
+	TIM1_Init(); 
 }
 void setAllSteeringEngine(void)
 {

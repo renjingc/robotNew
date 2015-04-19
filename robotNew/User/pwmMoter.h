@@ -44,7 +44,6 @@ void motor_rightRound(int angel);
 void motor_leftRound1(void);
 void motor_rightRound1(void);
 
-void moter_1_1(void);
 
 void TIM3GPIO_Init(void);
 void Tim3_Configuration(void);
